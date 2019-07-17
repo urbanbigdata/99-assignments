@@ -1,0 +1,188 @@
+"name","region","income","lifeExp"
+"Afghanistan","asia",1740,58
+"Albania","europe",11400,77.7
+"Algeria","africa",14000,77.4
+"Andorra","europe",48200,82.5
+"Angola","africa",6030,64.7
+"Antigua and Barbuda","americas",20800,77.3
+"Argentina","americas",18500,76.7
+"Armenia","europe",8170,75.7
+"Australia","asia",44400,82.5
+"Austria","europe",44100,81.5
+"Azerbaijan","europe",16000,72.1
+"Bahamas","americas",21500,73.8
+"Bahrain","asia",44600,76.9
+"Bangladesh","asia",3320,72.8
+"Barbados","americas",15600,76.5
+"Belarus","europe",16700,73.5
+"Belgium","europe",41900,80.9
+"Belize","americas",7830,72
+"Benin","africa",2010,64.4
+"Bhutan","asia",8110,74.1
+"Bolivia","americas",6710,73.3
+"Bosnia and Herzegovina","europe",11200,77.6
+"Botswana","africa",15500,65.5
+"Brazil","americas",14000,75.3
+"Brunei","asia",71800,77
+"Bulgaria","europe",17700,75.1
+"Burkina Faso","africa",1600,60.8
+"Burundi","africa",721,60.4
+"Cambodia","asia",3460,68.7
+"Cameroon","africa",3050,60.2
+"Canada","americas",43100,81.8
+"Cape Verde","africa",6080,73.7
+"Central African Republic","africa",648,50.3
+"Chad","africa",1850,59.8
+"Chile","americas",22700,80.2
+"China","asia",14400,76.6
+"Colombia","americas",13100,78.2
+"Comoros","africa",1410,67.6
+"Congo, Dem. Rep.","africa",742,61.6
+"Congo, Rep.","africa",5300,63
+"Costa Rica","americas",15400,81
+"Cote d'Ivoire","africa",3450,60
+"Croatia","europe",21400,77.3
+"Cuba","americas",20000,79
+"Cyprus","europe",31200,80.5
+"Czech Republic","europe",31100,79.1
+"Denmark","europe",45700,80.8
+"Djibouti","africa",3270,66.7
+"Dominica","americas",10200,73
+"Dominican Republic","americas",14100,75.7
+"Ecuador","americas",10500,77.9
+"Egypt","africa",10300,72.2
+"El Salvador","americas",7990,75.3
+"Equatorial Guinea","africa",23700,65.5
+"Eritrea","africa",1240,63.7
+"Estonia","europe",27700,77.4
+"Ethiopia","africa",1610,65.6
+"Fiji","asia",8860,65.5
+"Finland","europe",39400,81.7
+"France","europe",38100,82.3
+"Gabon","africa",16800,66.6
+"Gambia","africa",1570,67.3
+"Georgia","europe",9270,74
+"Germany","europe",44100,80.9
+"Ghana","africa",3980,66
+"Greece","europe",24300,81
+"Grenada","americas",12900,71.6
+"Guatemala","americas",7370,72.7
+"Guinea","africa",1220,60.7
+"Guinea-Bissau","africa",1470,58.8
+"Guyana","americas",7250,67.9
+"Haiti","americas",1650,64
+"Honduras","americas",4390,72.7
+"Hungary","europe",25400,75.7
+"Iceland","europe",45300,82.3
+"India","asia",6090,68.6
+"Indonesia","asia",10800,71.7
+"Iran","asia",16300,76.1
+"Iraq","asia",16100,67.7
+"Ireland","europe",62800,81.2
+"Israel","asia",32600,82.1
+"Italy","europe",34600,82.3
+"Jamaica","americas",8190,74.9
+"Japan","asia",38200,83.9
+"Jordan","asia",8390,76.3
+"Kazakhstan","asia",23400,71.7
+"Kenya","africa",2930,66.9
+"Kiribati","asia",1900,61.9
+"North Korea","asia",1390,70.7
+"South Korea","asia",35000,80.9
+"Kuwait","asia",67300,79.7
+"Kyrgyz Republic","asia",3290,71.2
+"Lao","asia",5740,67.3
+"Latvia","europe",23700,74.9
+"Lebanon","asia",13000,80.1
+"Lesotho","africa",2810,50.4
+"Liberia","africa",754,64.4
+"Libya","africa",17600,75.1
+"Lithuania","europe",27900,75
+"Luxembourg","europe",97000,82.1
+"Macedonia, FYR","europe",13100,74.9
+"Madagascar","africa",1400,62.7
+"Malawi","africa",1080,60.3
+"Malaysia","asia",25700,75.6
+"Maldives","asia",12200,79.5
+"Mali","africa",1960,61.9
+"Malta","europe",35700,81.4
+"Marshall Islands","asia",3780,65
+"Mauritania","africa",3570,70.3
+"Mauritius","africa",19500,74.6
+"Mexico","americas",16800,76.4
+"Micronesia, Fed. Sts.","asia",3330,65.6
+"Moldova","europe",4940,72.2
+"Mongolia","asia",11300,68.3
+"Montenegro","europe",15700,77
+"Morocco","africa",7270,75
+"Mozambique","africa",1130,60
+"Myanmar","asia",5350,70
+"Namibia","africa",9810,64.8
+"Nepal","asia",2290,70.8
+"Netherlands","europe",47100,81.6
+"New Zealand","asia",35300,81.5
+"Nicaragua","americas",5140,78.2
+"Niger","africa",907,61.7
+"Nigeria","africa",5440,65
+"Norway","europe",63800,82.1
+"Oman","asia",39100,77.6
+"Pakistan","asia",4870,67.7
+"Panama","americas",21300,79
+"Papua New Guinea","asia",2760,60.8
+"Paraguay","americas",8880,74.6
+"Peru","americas",12100,79.7
+"Philippines","asia",7240,70.3
+"Poland","europe",26000,77.9
+"Portugal","europe",27000,80.9
+"Qatar","asia",118000,80.4
+"Romania","europe",21600,75.3
+"Russia","europe",24000,70.8
+"Rwanda","africa",1770,67.7
+"St. Lucia","americas",10700,76.2
+"St. Vincent and the Grenadines","americas",10800,71.8
+"Samoa","asia",5880,72
+"Sao Tome and Principe","africa",2990,70.6
+"Saudi Arabia","asia",50500,77.3
+"Senegal","africa",2380,66.2
+"Serbia","europe",13700,75.9
+"Seychelles","africa",26300,73.8
+"Sierra Leone","africa",1370,59.1
+"Singapore","asia",81400,83.7
+"Slovak Republic","europe",29200,76.9
+"Slovenia","europe",29800,80.8
+"Solomon Islands","asia",2070,63.1
+"Somalia","africa",625,57.2
+"South Africa","africa",12300,62.4
+"Spain","europe",33300,82.9
+"Sri Lanka","asia",11400,77.4
+"Sudan","africa",4390,68.3
+"Suriname","americas",13100,71.4
+"Swaziland","africa",7730,57.7
+"Sweden","europe",46400,82
+"Switzerland","europe",56600,83.1
+"Syria","asia",3300,68.4
+"Tajikistan","asia",2760,71.9
+"Tanzania","africa",2580,64.3
+"Thailand","asia",15700,77.8
+"Timor-Leste","asia",1930,72.7
+"Togo","africa",1380,62.6
+"Tonga","asia",5330,70.4
+"Trinidad and Tobago","americas",29600,73.2
+"Tunisia","africa",10800,77.5
+"Turkey","europe",23700,79.1
+"Turkmenistan","asia",15600,70.2
+"Uganda","africa",1710,62.3
+"Ukraine","europe",7670,72
+"United Arab Emirates","asia",67100,76.6
+"United Kingdom","europe",38900,80.9
+"United States","americas",53300,78.8
+"Uruguay","americas",20000,77.3
+"Uzbekistan","asia",6040,70.3
+"Vanuatu","asia",2860,64
+"Venezuela","americas",15000,75.5
+"Palestine","asia",2690,71.8
+"Vietnam","asia",5960,74.5
+"Yemen","asia",2330,66.7
+"Zambia","africa",3640,58.8
+"Zimbabwe","africa",1860,59.3
+"South Sudan","africa",1860,59.7
