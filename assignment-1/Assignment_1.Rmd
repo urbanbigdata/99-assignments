@@ -1,0 +1,43 @@
+---
+title: "Urban Big Data Analytics - Assignment 1"
+author: "Andy Hong"
+date: "July 17, 2019"
+output:
+  html_document:
+    css: my_styles.css
+  pdf_document: default
+  word_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Please download and install the following softwares
+
+* Download and install the GapMinder offline: https://www.gapminder.org/tools-offline
+
+* Register for Exploratory and download/install Exploratory: https://exploratory.io/download
+
+* Download and install R: https://mirror.its.sfu.ca/mirror/CRAN
+
+* Download and install RStudio: https://www.rstudio.com/products/rstudio/download/
+
+* Download and install QGIS: https://qgis.org/
+
+
+## Requirement
+
+ + Take a snapshot of the installed programs
+ + Insert the snapshots of the five programs into a word document
+ + Please email the document to the course email (urbanbigdata2019@gmail.com). <br>
+ + <font color="red"><b>[IMPORTANT]</b></font> Please use the following email title format: <br>
+ `VSP BigData [assignment number] - [your name]` <br>
+ ex), `VSP BigData Assignment 1 - Bill Gates` <br>
+ + Assignment 1 is due tomorrow (July 18 5:00 PM)
+ 
+<br><br><br>
+
+

@@ -93,13 +93,11 @@ ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + geom_smooth() + s
 
 ## **Task 3**
 
-# Please email the completed Assignment 4 template R file to the course email (urbanbigdata2019@gmail.com). 
+# Please email the completed Assignment 4 template R file to the instructor (andyhong@gmail.com). 
 # Make sure to use the following email title format: <br>
 # `VSP BigData [assignment number] - [your name]` <br>
-# ex), `VSP BigData Assignment 4 - Bill Gates` <br>
-# Assignment 4 is due this Wednesday (Jul 31, 5:00 PM)
+# ex), `VSP BigData Assignment 4 - Andy Hong` <br>
+# Assignment 4 is due this Wednesday (Aug 2, 5:00 PM)
 
-
-  
 
 

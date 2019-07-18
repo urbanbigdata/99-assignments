@@ -1,0 +1,297 @@
+---
+title: "Urban Big Data Analytics - Assignment 3"
+author: "Andy Hong"
+date: "July 22, 2019"
+output:
+  html_document: 
+    css: my_styles.css
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# require(ggplot2)
+# require(dplyr)
+# require(gapminder)
+gapminder = read.csv("/Users/andyhong/Documents/7-Teaching/Urban Big Data Analytics/02-Assignments/assignment-3/gapminder_data.csv")
+
+
+```
+
+
+# Prerequisites 
+
+First, create a folder named `assignments` under the `vsp_bigdata` folder in your Documents folder. <br>
+
+**IMPORTANT - PLEASE FOLLOW THE EXACT FOLDER NAME. OTHERWISE, YOU WILL GET LOST.**
+
+Now, let's download the gapminder data set from this link: <a href="http://urbanbigdata.github.io/99-assignments/assignment-3/gapminder_data.csv" download> Gapminder CSV file </a>.<br>
+Once you downloaded the file, move or copy the gapminder file to the `assignments` folder you just created. <br><br>
+
+Next, please download a clean R template file here: <a href="http://urbanbigdata.github.io/99-assignments/assignment-3/Assignment_3_template.R" download> Assignment 3 template R file </a>.<br>
+Make sure to save this R template file under the `assignments` folder you just created.
+
+Finally, let's run the R Studio program. Once the R Studio is loaded, you can open the assignment 3 template R file. The R template file should be a blank script with the header description below. <br>
+
+
+```{r}
+###########################################
+#
+# VSP Urban Big Data Assignment 3
+#
+# Title: Data wrangling with Gapminder data
+# Group number: <your input>
+# Name: <your input>
+# Date: <your input>
+# 
+###########################################
+```
+
+# Instructions
+
+## 1. Synopsis
+
+The purpose of this assignment is to get you familiar with the R environment and get your hands wet with real data. You may be familiar with the **Gapminder** data from your previous assignment. For this assignment, you will work with the actual data behind the gapminder tool. This assignment will walk you through how to load the data and do a basic data wrangling with them.
+
+
+## 2. Basic setup
+
+### Install required package
+
+For the assignment 3, you will need to install the `dplyr` package. This package allows you to use core functions to do a data wrangling. You will also need to download the gapminder dataset and load the data to R Studio.
+
+
+```{r}
+# install.packages("dplyr", repos='http://cran.us.r-project.org')
+# install.packages("tidyverse" repos='http://cran.us.r-project.org')
+```
+
+### Load the package
+
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+### Gapminder dataset
+
+Now, let's load the gapminder file to the R Studio environment.<br>
+**Make sure to change `<your user name>` with your own user name for the path.**
+
+```{r, eval=FALSE}
+
+# For Windows
+gapminder = read.csv("C:\Users\<your user name>\Documents\vsp_bigdata\assignments\gapminder_data.csv")
+
+# For Mac
+gapminder = read.csv("/Users/<your user name>/Documents/vsp_bigdata/assignments/gapminder_data.csv")
+
+```
+
+The gapminder dataset has 6 variables and 1704 observations. Let's take look at the first 6 rows of the data.
+
+```{r}
+head(gapminder)
+```
+
+We can list the variables in the dataset, using the `names()` function.
+
+### Variables (columns) in gapminder dataset
+
+```{r}
+names(gapminder)
+```
+
+### Structure of the gapminder dataset
+
+Another way to see the "structure" of the dataset is to run the `str()` function.
+
+```{r}
+str(gapminder)
+```
+
+You'll notice that the 1st 2 columns/variables "country" and "continent" are both "Factor" type variables. This means that they are texts, or more precisely, categorical variables Variables 3 and 5 "year" and "pop" are both "int" Integer type variables. Variables 4 and 6 "lifeExp" and "gdpPercap" are both "num" Numeric type variables.
+
+### Summary statistics of the gapminder dataset
+
+The built in function `summary()` in base R does a good simple summary statistics for all variables in the dataset provided. Since this dataset only has 6 variable, we can simply call `summary(gapminder)` which will give us the summary statistics for all 6 variables.
+
+```{r}
+summary(gapminder)
+```
+
+
+## 3. Data wrangling in R
+
+### %>% Operator
+One of the important features in R is the `%>%` operator. This operator allows for chaining multiple functions together by incorporating `%>%`. This operator will forward a value, or the result of an expression, into the next function call/expression. For instance a function to filter data can be written as:
+
+```{r, eval=FALSE}
+
+# Normally, you will need to include dataset in all the functions, like this:
+filter(data, variable == numeric_value)
+
+# But with the %>% operator, you can simply chain different functions in a forward direciton, like this:
+data %>% filter(variable == numeric_value)
+
+```
+
+As your function tasks get longer the %>% operator becomes more efficient and makes your code more legible. In addition, although not covered in this tutorial, the %>% operator allows you to flow from data manipulation tasks straight into vizualization functions (via ggplot and ggvis) and also into many analytic functions.<br><br>
+
+To learn more about the %>% operator and the magrittr package visit any of the following:<br>
+http://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html <br>
+http://www.r-bloggers.com/simpler-r-coding-with-pipes-the-present-and-future-of-the-magrittr-package/ <br>
+http://blog.revolutionanalytics.com/2014/07/magrittr-simplifying-r-code-with-pipes.html <br><br>
+
+### Key functions for data wrangling in R
+
+We will use the `dplyr` package, which allows you to use the following data wrangling functions. 
+
+```{r, eval=FALSE}
+select()
+filter()
+mutate()
+group_by()
+summarise()
+arrange()
+join()
+
+```
+
+For this assignment, we will walk you through five basic functions: `select()`, `filter()`, `mutate()`, `group_by()`, `summarise()`.<br><br>
+
+
+### **select( )** function:
+Objective: Reduce dataframe size to only desired variables for current task<br>
+
+Description: When working with a sizable dataframe, often we desire to only assess specific variables. The select() function allows you to select and/or rename variables.
+
+
+```{r}
+
+# Only select country, continent, year, lifeExp, and pop
+core_data = gapminder %>% select(country, continent, year, pop, lifeExp)
+
+head(core_data)
+
+```
+<br>
+
+### **filter( )** function:
+Objective: Reduce rows/observations with matching conditions<br>
+
+Description: Filtering data is a common task to identify/select observations in which a particular variable matches a specific value/condition. The  filter() function provides this capability.
+
+```{r}
+
+# Filter data only for years between 1982 and 2002
+core_data = gapminder %>% filter(between(year, 1982, 2002))
+
+head(core_data)
+gapminder %>% filter(country == "United States")
+
+```
+
+Now, let's filter data to choose only one country, USA. Noice that we use `==` operator to choose the country.
+
+```{r}
+
+# Filter data to choose USA
+core_data = gapminder %>% filter(country == "United States")
+
+head(core_data)
+
+```
+
+You can chain the `select()` and `filter()` functions in one line.
+
+```{r}
+
+# Select and filter data all together
+core_data = gapminder %>% 
+  select(country, continent, year, pop, lifeExp) %>% 
+  filter(between(year, 1982, 2002)) %>%
+  filter(country == "United States")
+
+head(core_data)
+
+```
+<br>
+
+### **mutate( )** function:
+Objective: Creates new variables<br>
+
+Description: Often we want to create a new variable that is a function of the current variables in our dataframe or even just add a new variable. The mutate() function allows us to add new variables while preserving the existing variables.
+
+```{r}
+
+# Let's add a variable that represents gross domestic product (GDP) in 2002
+core_data = gapminder %>% 
+  filter(year == 2002) %>%
+  mutate(gdp = pop * gdpPercap)
+  
+head(core_data)
+
+
+```
+
+<br>
+
+### **group_by( )** function:
+Objective: Group data by categorical variables<br>
+
+Description: Often, observations are nested within groups or categories and our goals is to perform statistical analysis both at the observation level and also at the group level. The group_by() function allows us to create these categorical groupings.
+
+```{r}
+
+# Now let's group the data by continent
+core_data = gapminder %>% group_by(continent)
+
+head(core_data)
+
+```
+
+ The `group_by()` function is a silent function in which no observable manipulation of the data is performed as a result of applying the function. Rather, the only change you’ll notice is, if you print the dataframe you will notice underneath the Source information and prior to the actual dataframe, an indicator of what variable the data is grouped by will be provided. The real magic of the `group_by()` function comes when we perform summary statistics which we will cover shortly.<br><br>
+
+### **summarise( )** function:
+Objective: Perform summary statistics on variables<br>
+
+Description: Obviously the goal of all this data wrangling is to be able to perform statistical analysis on our data. The summarise() function allows us to perform the majority of the initial summary statistics when performing exploratory data analysis.
+
+
+```{r}
+
+# Lets get the mean population for each continent in 2007
+core_data = gapminder %>% 
+  filter(year == 2007) %>%
+  group_by(continent) %>%
+  summarise(meanPop = mean(pop, na.rm=TRUE))
+  
+core_data
+
+
+```
+<br><br>
+
+## **Task 1**
+
+Modify the R code chunk above to select `country` and `pop`. Then filter the data for `Canada` for year 2007.<br>
+_Hint: you may use `select()` and `filter()`._ <br><br>
+
+## **Task 2**
+
+Modify the R code chunk above to group by continent and calculate mean life expectancy by continent for year 2007.<br>
+_Hint: you may use `filter()`, `group_by()`, and `summarise()`._ <br><br>
+
+## **Task 3**
+
+ + Please email the document to the course email (urbanbigdata2019@gmail.com). <br>
+ + <font color="red"><b>[IMPORTANT]</b></font> Please use the following email title format: <br>
+ `VSP BigData [assignment number] - [your name]` <br>
+ ex), `VSP BigData Assignment 3 - Bill Gates` <br>
+  + Assignment 3 is due this Thursday (July 25 5:00 PM)
+   
+<br><br><br>
+
+

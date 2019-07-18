@@ -1,0 +1,64 @@
+---
+title: "Urban Big Data Analytics - Assignment 2"
+author: "Andy Hong"
+date: "July 18, 2019"
+output:
+  html_document:
+    css: my_styles.css
+  pdf_document: default
+  word_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Prerequisites
+
+* Download and install the GapMinder offline: https://www.gapminder.org/tools-offline
+* Register for Exploratory and download/install Exploratory: https://exploratory.io/download
+* Download and install R: https://mirror.its.sfu.ca/mirror/CRAN
+* Download and install RStudio: https://www.rstudio.com/products/rstudio/download/
+* Download and install QGIS: https://qgis.org/
+
+
+## Instruction
+
+The purpose of this assignment is to train you to think like a *data scientist*. Data science tasks often start with **recognizing** the problems at hand and trying to find the right dataset and analytic tools to **understand and contextualize** the data to tell a **story**.
+
+1. Think about one issue in your hometown or any country if you cannot find your country in the Gapminder tool. 
+
+2. Pick one issue and explain why that is an issue.
+
+3. Think about possible relationships. Think about why X (independent variable) might affect Y (dependent variable) on your chart. 
+
+4. First create a line chart showing the trends of the issue (Y) over time.
+
+5. Create a bubble chart showing the relationship between X (independent variable) and Y (dependent variable).
+
+6. Use Export to PNG function in the GapMinder tool and embed the image in your report.
+ + If the export function doesnt work, take a snapshot of the chart and include it in your report.
+ 
+7. A good story consists of five elements: 
+ + Issue at hand: What is the issue? Does it make people's lives inconvenient? Does it make people sick?
+ + Supporting data and variable selection: Find the right variables (X and Y) that best represent the issue at hand. 
+ + Relationship: What is the relationship between X and Y? Any trend? Does increase in X lead to increase in Y? 
+ + Interprtation: Suppose you find some relationship between X and Y. Why do you think that relationship exist? For example, suppose you find that higher income countries have less child mortality, then you may speculate that richer countries spend more money on public health and health care services for babies and children. 
+ + Summary and conclusions: Summarize what you've learned and provide future directions. For example, once you learn that richer countries have less child mortality, then you might want to explore if the richer countries actually spend more money on public health and health care.
+
+## Requirement
+
+ + Minimum page length is 3 pages
+ + Use Times New Roman font with font size 12
+ + Use single space
+ + Please email the document to the course email (urbanbigdata2019@gmail.com). <br>
+ + <font color="red"><b>[IMPORTANT]</b></font> Please use the following email title format: <br>
+ `VSP BigData [assignment number] - [your name]` <br>
+ ex), `VSP BigData Assignment 2 - Bill Gates` <br>
+  + Assignment 2 is due next Monday (July 22 5:00 PM)
+ 
+<br><br>
+
+

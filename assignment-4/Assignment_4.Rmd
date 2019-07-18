@@ -1,0 +1,272 @@
+---
+title: "Urban Big Data Analytics - Assignment 4"
+author: "Andy Hong"
+date: "July 29, 2019"
+output:
+  html_document: 
+    css: my_styles.css
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# require(ggplot2)
+# require(dplyr)
+# require(gapminder)
+
+gapminder = read.csv("/Users/andyhong/Documents/7-Teaching/Urban Big Data Analytics/02-Assignments/assignment-4/gapminder_data_2016.csv")
+
+geo = read.csv("/Users/andyhong/Documents/7-Teaching/Urban Big Data Analytics/02-Assignments/assignment-4/gapminder_geo.csv")
+
+```
+
+
+# Prerequisites 
+
+First, create a folder named `assignments` under the `vsp_bigdata` folder in your Documents folder. <br>
+
+**IMPORTANT - PLEASE FOLLOW THE EXACT FOLDER NAME. OTHERWISE, YOU WILL GET LOST.**
+
+Now, let's download the gapminder data set from this link: <a href="http://urbanbigdata.github.io/99-assignments/assignment-4/gapminder_data_2016.csv" download> Gapminder 2016 CSV file </a>.<br>
+
+Now, download the gapminder geographic coordinate file from this link: <a href="http://urbanbigdata.github.io/99-assignments/assignment-4/gapminder_geo.csv" download> Gapminder geographic coordinate file </a>.<br>
+
+Once you downloaded the files, move or copy the files to the `assignments` folder you just created. <br><br>
+
+Next, please download a clean R template file here: <a href="http://urbanbigdata.github.io/99-assignments/assignment-4/Assignment_4_template.R" download> Assignment 4 template R file </a>.<br>
+Make sure to save this R template file under the `assignments` folder you just created.
+
+Finally, let's run the R Studio program. Once the R Studio is loaded, you can open the assignment 3 template R file. The R template file should be a blank script with the header description below. <br>
+
+
+```{r}
+###########################################
+#
+# VSP Urban Big Data Assignment 4
+#
+# Title: Data visualization with Gapminder data
+# Group number: <your input>
+# Name: <your input>
+# Date: <your input>
+# 
+###########################################
+```
+
+# Instructions
+
+## 1. Synopsis
+
+The purpose of this assignment is to get you familiar with data visualization in R. By now, you must be quite familiar with the **Gapminder** data from your previous assignments. For this assignment, you will work with the gapminder data for 2016, and the coordinate data available for each countryin the gapminder data. This assignment will walk you through how to load the data and do a basic data visualization.
+
+
+## 2. Basic setup
+
+### Install required package
+
+For the assignment 4, you will need to install the five packages listed velow. These packages allow you to use core functions to do a data visualization and web mapping. You will also need to download the gapminder datasets and load the data to R Studio.
+
+
+```{r, eval=F}
+install.packages("dplyr")
+install.packages("magrittr")
+install.packages("ggplot2")
+install.packages("plotly")
+install.packages("leaflet")
+```
+
+### Load the package
+
+```{r warning=FALSE, message=FALSE}
+library(dplyr)
+library(magrittr)
+library(ggplot2)
+library(plotly)
+library(leaflet)
+```
+
+### Gapminder dataset
+
+Now, let's load the gapminder file to the R Studio environment.<br>
+**Make sure to change `[your user name]` with your own user name for the path.**
+
+```{r, eval=FALSE}
+
+# For Windows
+gapminder = read.csv("C://Users//[your user name]//Documents//vsp_bigdata//assignments//gapminder_data_2016.csv")
+geo = read.csv("C://Users//[your user name]//Documents//vsp_bigdata//assignments//gapminder_geo.csv")
+  
+# For Mac
+gapminder = read.csv("/Users/[your user name]/Documents/vsp_bigdata/assignments/gapminder_data_2016.csv")
+geo = read.csv("/Users/[your user name]/Documents/vsp_bigdata/assignments/gapminder_geo.csv")
+
+```
+
+The gapminder 2016 dataset has 4 variables and 187 observations. Let's take look at the first 6 rows of the data.
+
+```{r}
+head(gapminder)
+```
+
+Now let's take a look at the geographic coordinate data. 
+
+```{r}
+head(geo)
+```
+
+
+## 3. Data joining in R
+
+We can use the column `name`  to join the two data sets together to prepare for mapping later. We are going to use `inner_join` so that we only choose countries with complete geographic data.
+
+```{r}
+
+# Join gapminder data and the geographic coordinates
+gapminder = gapminder %>% inner_join(geo, by="name")
+
+# Check the joined data
+head(gapminder)
+
+```
+
+### Key functions for data visualization in R
+
+We will use the `ggplot2` package, which allows you to use the following data visualization functions. 
+
+```{r, eval=FALSE}
+
+geom_histogram() # histogram
+geom_point() # scatter plot
+geom_smooth() # trend line
+geom_bar() # bar plot
+geom_line() # line plot
+
+```
+
+For this assignment, we will use the three visualization functions: `geom_histogram()`, `geom_point()`, `geom_smooth()`.<br><br>
+
+### Initialize ggplot
+
+To initialize ggplot functions, you will need to use the ggplot function and declare x and y axes. `aes` is short for "aesthetic", and what go inside this parameter are the variables that can be pulled from the data.<br>
+
+```{r}
+ggplot(gapminder, aes(x = income))
+
+```
+
+You will see a blank plot without any data in it, but that's okay.
+
+### **geom_histogram( )** function:
+This function allows you to create a histogram using the x-axis variable inside the `aes` parameter.
+
+
+```{r}
+
+ggplot(gapminder, aes(x = income)) + geom_histogram()
+
+```
+<br>
+
+### **geom_point( )** function:
+This function allows you to create a scatter plot using x and y axes inside the `aes` parameter.
+
+```{r}
+
+ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point()
+
+```
+
+The graph looks non-linear, so we can take a log of income or can use a log scale for the x-axis. 
+
+```{r}
+
+# Create a log-transformed income variable
+gapminder = gapminder %>% mutate(income_log = log(income))
+
+# Plot again with the log-transformed income
+ggplot(gapminder, aes(x = income_log, y=lifeExp)) + geom_point()
+
+```
+
+Of we can apply a log-scale only for plotting.
+
+```{r}
+# Plot again with a log scale applied to the x-axis
+ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + scale_x_log10()
+
+```
+
+
+### **geom_boxplot( )** function:
+This function allows you to create a boxplot. The X-axis should be a categorical variable, and the Y-axis a continuous  numeric variable. Note that `geom_jitter` function allows you to spread the points.
+
+```{r}
+
+ggplot(gapminder, aes(x = region, y = lifeExp)) +
+  geom_boxplot(outlier.colour = "hotpink") +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1/4)
+
+```
+
+The `geom_jitter` is not necessary but addes more depth into our visualization.
+```{r}
+
+ggplot(gapminder, aes(x = region, y = lifeExp)) +
+  geom_boxplot(outlier.colour = "hotpink") +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1/4)
+
+```
+
+<br>
+
+### **geom_smooth( )** function:
+Creates a trend line using models, such as a linear regression, a local regression, and polynomial functions.
+
+
+```{r warning=FALSE, message=FALSE}
+
+# Plot a trend line
+ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + geom_smooth() + scale_x_log10()
+
+
+```
+
+Now, we will cut the data into four continents using the `facet_grid` function. It is a very useful function to cut data differently and see ther patterns. 
+
+```{r warning=FALSE, message=FALSE, fig.width=9, fig.height=4.5}
+
+ggplot(gapminder, aes(x = income, y = lifeExp)) +
+  geom_point(aes(color = region)) +
+  geom_smooth(aes(color = region)) + 
+  facet_grid(.~region) + 
+  scale_x_log10()
+
+
+```
+<br><br>
+
+
+
+
+## **Task 1**
+
+Modify the R code chunk above to create one histogram for population `population`, and another histogram for life expectancy `lifeExp`.<br>
+_Hint: you may use `geom_histogram()`._ <br><br>
+
+## **Task 2**
+
+Modify the R code chunk above to create a scatter plot and a trend line showing the relationship between population and life expectancy by continent. Please transform the variable accordingly. <br>
+_Hint: you may use `geom_point()` and `geom_smooth()`._ <br><br>
+
+
+## **Task 3**
+
+ + Please email the document to the course email (urbanbigdata2019@gmail.com). <br>
+ + <font color="red"><b>[IMPORTANT]</b></font> Please use the following email title format: <br>
+ `VSP BigData [assignment number] - [your name]` <br>
+ ex), `VSP BigData Assignment 4 - Bill Gates` <br>
+  + Assignment 4 is due this Wednesday (Jul 31, 5:00 PM)
+   
+<br><br><br>
+
+
