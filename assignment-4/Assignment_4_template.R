@@ -79,20 +79,20 @@ ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + geom_smooth() + s
 
 ############# Tasks to complete ############# 
 
-## **Task 1**
+## Task 1
 # Modify the R code chunk above to create one histogram for `population`, one histogram for `income`,
 # and one histogram for life expectancy `lifeExp`. Describe your graphs (e.g. mean and distribution).
 # Hint: you may use `geom_histogram()`
   
 
-## **Task 2**
+## Task 2
 # Modify the R code chunk above to create a scatter plot and a trend line showing the relationship
 # between income and life expectancy by continent. Please transform the variable accordingly. 
 # Describe your graph.
 # Hint: you may use `geom_point()` and `geom_smooth()`
   
   
-## **Task 3**
+## Task 3
 # For advanced students, use the `grid.arrange()` function to combine two plots: a box plot showing 
 # income levels; a scatter plot showing the relationship between income and life expectancy. 
 # Add the title for each plot using the `ggtitle` function. Also use the `ggplotGrob` function 
@@ -102,7 +102,7 @@ ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + geom_smooth() + s
 # For more information, see this: https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
 
 
-## **Task 4**
+## Task 4
 # Please email the completed Assignment 4 template R file to the instructor (urbanbigdata2019@gmail.com). 
 # Make sure to use the following email title format: <br>
 # `VSP BigData [assignment number] - [your name]` <br>
