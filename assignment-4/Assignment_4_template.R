@@ -107,7 +107,7 @@ ggplot(gapminder, aes(x = income, y=lifeExp)) + geom_point() + geom_smooth() + s
 # Make sure to use the following email title format: <br>
 # `VSP BigData [assignment number] - [your name]` <br>
 # ex), `VSP BigData Assignment 4 - Andy Hong` <br>
-# Assignment 4 is due this Wednesday (Aug 2, 5:00 PM)
+# Assignment 4 is due this Wednesday (July 31, 5:00 PM)
 
 
 
