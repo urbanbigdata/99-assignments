@@ -37,7 +37,7 @@ Once you downloaded the files, move or copy the files to the `assignments` folde
 Next, please download a clean R template file here: <a href="http://urbanbigdata.github.io/99-assignments/assignment-4/Assignment_4_template.R" download> Assignment 4 template R file </a>.<br>
 Make sure to save this R template file under the `assignments` folder you just created.
 
-Finally, let's run the R Studio program. Once the R Studio is loaded, you can open the assignment 3 template R file. The R template file should be a blank script with the header description below. <br>
+Finally, let's run the R Studio program. Once the R Studio is loaded, you can open the assignment 4 template R file. The R template file should be a blank script with the header description below. <br>
 
 
 ```{r}
