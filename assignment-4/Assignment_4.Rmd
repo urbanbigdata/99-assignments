@@ -250,22 +250,27 @@ ggplot(gapminder, aes(x = income, y = lifeExp)) +
 
 ## **Task 1**
 
-Modify the R code chunk above to create one histogram for population `population`, and another histogram for life expectancy `lifeExp`.<br>
+Modify the R code chunk above to create one histogram for `population`, one histogram for `income`, and one histogram for life expectancy `lifeExp`. Describe your graphs (e.g. mean and distribution).<br>
 _Hint: you may use `geom_histogram()`._ <br><br>
 
 ## **Task 2**
 
-Modify the R code chunk above to create a scatter plot and a trend line showing the relationship between population and life expectancy by continent. Please transform the variable accordingly. <br>
+Modify the R code chunk above to create a scatter plot and a trend line showing the relationship between income and life expectancy by continent. Please transform the variable accordingly. Describe your graph.<br>
 _Hint: you may use `geom_point()` and `geom_smooth()`._ <br><br>
 
 
 ## **Task 3**
+
+<font color="red">For advanced students</font>, use the `grid.arrange()` function to combine two plots: a box plot showing income levels; a scatter plot showing the relationship between income and life expectancy. Add the title for each plot using the `ggtitle` function. Also use the `ggplotGrob` function from `gtable` package to align the graphs by changing their widths. <font color="red">Extra 2 points</font>: Along with your assignment 4, add the combined graphs with titles and descriptions. See this <a href="https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html" target="_blank">vignette</a> for aligning plot panels. <br><br>
+
+## **Task 4**
 
  + Please email the document to the course email (urbanbigdata2019@gmail.com). <br>
  + <font color="red"><b>[IMPORTANT]</b></font> Please use the following email title format: <br>
  `VSP BigData [assignment number] - [your name]` <br>
  ex), `VSP BigData Assignment 4 - Bill Gates` <br>
   + Assignment 4 is due this Wednesday (Jul 31, 5:00 PM)
+   
    
 <br><br><br>
 
